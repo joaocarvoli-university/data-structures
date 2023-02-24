@@ -5,16 +5,28 @@ sys.path.append("lists")
 from lists import singlyLinked
 
 lk = singlyLinked.SinglyLinkedList()
-lk.append(2)
-lk.append(3)
+lk.add_start(10)
+lk.add_start(11)
+
+lk.print()  # List: [11, 10]
+
+# print(lk.get(0))  # expected result: 11
+
+lk.add_end(2)
+lk.add_end(4)
+lk.add_end(3)
+
+lk.print()  # List: [11, 10, 2, 4, 3]
+
+print(lk.get(1))  # expected result: 10
+print(lk.get(2))  # expected result: 2
 
 print(lk.search(3))  # expected result: The element 3 was found!
 print(lk.search(4))  # expected result: The element 4 wasn't found!
 print(lk.search(2))  # expected result: The element 2 was found!
 
-print(f'The size of the Linked list is: {lk.size()}')  # expected result: 2
-print(lk.get(0))  # expected result: 2
-print(lk.get(1))  # expected result: 3
-lk.set(1, 1)
-print(lk.get(1))  # expected result: 1
-print(lk.get(2))  # expected result: error -> list index out of range
+print(f'The size of the list is: {lk.size()}')  # expected result: 2
+print(f'The head of the list is: {lk.get_head_data()}')  # expected result: 2
+print(f'The tail of the list is: {lk.get_tail_data()}')  # expected result: 3
+
+# print(lk.get(5))  # expected result: error -> list index out of range
